@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { CatsService } from "./cats.service";
 
 @Component({
   selector: "app-root",
@@ -6,21 +7,14 @@ import { Component } from "@angular/core";
   styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
+  cats: object;
   title = "redux-app";
   age: number = 23;
   isTrue: boolean = false;
 
-  reverseTrue = () => {
-    this.isTrue = !this.isTrue;
-  };
-
-  myArray: Array<object> = [
-    { name: "Arnold" },
-    { name: "Franek" },
-    { name: "Stanisław" }
-  ];
-
-
-
-
+  constructor(private catService: CatsService) {
+    catService.getAllCats().subscribe(res => {
+      this.cats = res;
+    });
+  }
 }
