@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div>
   <h1>
     Welcome to {{ title }}!
     
@@ -13,8 +13,13 @@
     Pokaż
   </button>
   <h2 *ngIf="isTrue">
-    Ukrywam się i znikam
+    Pojawiam się i znikam
   </h2>
+  <div>
+    <h3 *ngFor="let me of myArray">
+      {{me.name}}
+    </h3>
+  </div>
 </div>
 <h2>Here are some links to help you start: </h2>
 <ul>
