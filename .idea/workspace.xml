@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="08b70763-8291-4761-93c2-cb940c9723b1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/redux-app/src/app/actions.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redux-app/src/app/store.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redux-app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/redux-app/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redux-app/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/redux-app/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redux-app/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/redux-app/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redux-app/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/redux-app/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/redux-app/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/redux-app/src/app/app.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,10 +30,19 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/.gitignore">
+              <provider selected="true" editor-type-id="text-editor">
+                <state>
+                  <caret column="5" selection-start-column="5" selection-end-column="5" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/redux-app/src/app/store.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="299">
-                  <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+                <state relative-caret-position="322">
+                  <caret line="14" column="2" lean-forward="true" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
                 </state>
               </provider>
             </entry>
@@ -117,6 +120,7 @@
         <option value="$PROJECT_DIR$/redux-app/src/app/app.component.html" />
         <option value="$PROJECT_DIR$/redux-app/src/app/store.ts" />
         <option value="$PROJECT_DIR$/redux-app/src/app/app.component.ts" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -214,12 +218,12 @@
       <option name="presentableId" value="Default" />
       <updated>1544190440468</updated>
       <workItem from="1544190441916" duration="9290000" />
-      <workItem from="1544264774186" duration="4136000" />
+      <workItem from="1544264774186" duration="4225000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13426000" />
+    <option name="totallyTimeSpent" value="13515000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1920" y="-55" width="1920" height="1080" extended-state="0" />
@@ -266,13 +270,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret lean-forward="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/redux-app/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -331,6 +328,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/redux-app/src/app/app.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="17" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/redux-app/src/app/store.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="2" lean-forward="true" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/redux-app/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/redux-app/src/app/app.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -341,20 +362,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/redux-app/src/app/store.ts">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="3" lean-forward="true" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/redux-app/src/app/app.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="17" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
         </state>
       </provider>
     </entry>
