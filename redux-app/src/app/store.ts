@@ -24,7 +24,6 @@ export function rootReducer(state: IAppState, action): IAppState {
         title: action.title,
         isCompleted: false
       };
-      console.log(newTodo);
       return tassign(state, {
         todos: state.todos.concat(newTodo),
         lastUpdate: new Date()
@@ -38,7 +37,8 @@ export function rootReducer(state: IAppState, action): IAppState {
           ...state.todos.slice(0, index),
           tassign(item, { isCompleted: !item.isCompleted }),
           ...state.todos.slice(index + 1)
-        ]
+        ],
+        lastUpdate: new Date()
       });
     case REMOVE_TODO:
       return tassign(state, {

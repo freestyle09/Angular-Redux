@@ -8,7 +8,7 @@
     
     <ul>
       <li *ngFor="let todo of todos | async">
-        {{todo.title}}
+        <span [class.isCompleted]="todo.isCompleted" (click)="updateTodo(todo.id)">{{todo.title}}</span>
         <button (click)="removeTodo(todo.id)">Remove</button>
       </li>
     </ul>
@@ -16,5 +16,8 @@
   <div>
     <app-other-cats></app-other-cats>
   </div>
-
+</div>
+<div *ngFor="let cat of cats">
+  Imię kota: {{cat.name}}
+  Kolor sierści kota: {{cat.color}}
 </div>

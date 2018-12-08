@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { CatsService } from "./cats.service";
 import { NgRedux, select } from "@angular-redux/store";
 import { IAppState } from "./store";
-import { ADD_TODO, REMOVE_TODO } from "./actions";
+import {ADD_TODO, REMOVE_TODO, UPDATE_TODO} from "./actions";
 
 @Component({
   selector: "app-root",
@@ -40,6 +40,9 @@ export class AppComponent implements OnInit {
     this.ngRedux.dispatch({ type: REMOVE_TODO, id });
   }
 
+  updateTodo(id) {
+    this.ngRedux.dispatch({type: UPDATE_TODO, id})
+  }
 
   ngOnInit(): void {}
 
