@@ -1,18 +1,20 @@
-import { Component, OnInit } from '@angular/core';
-import {NgRedux, select} from "@angular-redux/store";
-import {IAppState} from "../store";
+import { Component, OnInit } from "@angular/core";
+import { NgRedux, select } from "@angular-redux/store";
+import { IAppState } from "../store";
 
 @Component({
-  selector: 'app-other-cats',
-  templateUrl: './other-cats.component.html',
-  styleUrls: ['./other-cats.component.scss']
+  selector: "app-other-cats",
+  templateUrl: "./other-cats.component.html",
+  styleUrls: ["./other-cats.component.scss"]
 })
 export class OtherCatsComponent implements OnInit {
+  @select('lastUpdate') lastUpdate;
+  @select('todos') todos;
+  constructor(private ngRedux: NgRedux<IAppState>) {}
 
-  @select('counter') counting;
-  constructor(private ngRedux: NgRedux<IAppState>) { }
-
-  ngOnInit() {
+  deleteAll() {
+    this.ngRedux.dispatch({type: "DELETE_ALL_TODOS"})
   }
 
+  ngOnInit() {}
 }
