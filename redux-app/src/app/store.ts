@@ -1,25 +1,22 @@
-import { INCREMENT, DECREMENT } from "./actions";
+import { tassign } from "tassign";
+import { ADD_TODO } from "./actions";
 
 export interface IAppState {
-  counter: number;
-  messaging?: {
-    newMessages: number;
-  }
+  todos: any[];
 }
 
 export const INITIAL_STATE: IAppState = {
-  counter: 0,
-  messaging: {
-    newMessages: 5
-  }
+  todos: []
 };
 
 export function rootReducer(state: IAppState, action): IAppState {
   switch (action.type) {
-    case INCREMENT:
-      return { counter: state.counter + 1 };
-    case DECREMENT:
-      return { counter: state.counter - 1 };
+    case ADD_TODO:
+      let newTodo = { id: state.todos.length + 1, title: action.title };
+      console.log(state.todos);
+      return tassign(state, {
+        todos: state.todos.concat(newTodo)
+      });
     default:
       return state;
   }

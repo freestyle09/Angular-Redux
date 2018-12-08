@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { CatsService } from "./cats.service";
 import { NgRedux, select } from "@angular-redux/store";
 import { IAppState } from "./store";
-import { DECREMENT, INCREMENT } from "./actions";
+import { ADD_TODO } from "./actions";
 
 @Component({
   selector: "app-root",
@@ -12,7 +12,8 @@ import { DECREMENT, INCREMENT } from "./actions";
 export class AppComponent implements OnInit {
   cats: object;
   title = "redux-app";
-  @select("counter") count;
+  @select()
+  todos;
   // @select(['messaging', 'newMessages']) newMessages;
   // @select((s: IAppState) => s.messaging.newMessages) newMessages;
 
@@ -23,18 +24,17 @@ export class AppComponent implements OnInit {
     catService.getAllCats().subscribe(res => {
       this.cats = res;
     });
+    // Without select operator
     // ngRedux.subscribe(() => {
     //   let store = ngRedux.getState();
     //   this.counter = store.counter;
     // });
   }
 
-  increment() {
-    this.ngRedux.dispatch({ type: INCREMENT });
-  }
-
-  decrement() {
-    this.ngRedux.dispatch({ type: DECREMENT });
+  addTodo(input) {
+    if (!input.value) return;
+    this.ngRedux.dispatch({ type: ADD_TODO, title: input.value });
+    input.value = "";
   }
 
   ngOnInit(): void {}
