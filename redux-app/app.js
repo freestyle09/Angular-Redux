@@ -18,6 +18,11 @@ const cats = [
     id: 3,
     name: "Mysia",
     color: "Grey"
+  },
+  {
+    id: 4,
+    name: "Niunia",
+    color: "Black - grey"
   }
 ];
 app.get("/api/cats", (req, res) => {
