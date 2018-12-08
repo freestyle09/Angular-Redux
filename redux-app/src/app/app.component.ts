@@ -40,6 +40,7 @@ export class AppComponent implements OnInit {
     this.ngRedux.dispatch({ type: REMOVE_TODO, id });
   }
 
+
   ngOnInit(): void {}
 
   // // REDUX

@@ -1,13 +1,20 @@
-<h1>
-  Todo List
-</h1>
-<input type="text" #title>
-<button (click)="addTodo(title)">Add</button>
+<div class="flex">
+  <div>
+    <h1>
+      Todo List
+    </h1>
+    <input type="text" #title>
+    <button (click)="addTodo(title)">Add</button>
+    
+    <ul>
+      <li *ngFor="let todo of todos | async">
+        {{todo.title}}
+        <button (click)="removeTodo(todo.id)">Remove</button>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <app-other-cats></app-other-cats>
+  </div>
 
-<ul>
-  <li *ngFor="let todo of todos | async">
-    {{todo.title}}
-    <button (click)="removeTodo(todo.id)" >Remove</button>
-  </li>
-</ul>
-<app-other-cats></app-other-cats>
+</div>

@@ -1,2 +1,15 @@
+.flex {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+  > div {
+    width: 50%;
 
+    &:last-child {
+      height: 200px;
+      background-color: gainsboro;
+    }
+  }
+}
 
