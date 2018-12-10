@@ -28,10 +28,18 @@ app.get("/api/cats/:id", (req, res) => {
 });
 
 app.post("/api/cats", (req, res) => {
-  let cat = {
-    id: cats[cats.length - 1].id + 1,
-    title: req.body.title
-  };
+  let cat = {};
+  if (cats.length === 0) {
+    cat = {
+      id: 1,
+      title: req.body.title
+    };
+  } else {
+    cat = {
+      id: cats[cats.length - 1].id + 1,
+      title: req.body.title
+    };
+  }
   cats.push(cat);
   saveCat();
   res.send(cat);

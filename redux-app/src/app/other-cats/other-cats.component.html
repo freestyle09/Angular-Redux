@@ -3,10 +3,3 @@
   <p>Total Items: {{(todos | async).length }}</p>
   <button (click)="deleteAll()">Delete All</button>
 </div>
-
-
-<div>
-  <p *ngFor="let cat of todos | async">
-    Imię kota {{cat.title}}
-  </p>
-</div>

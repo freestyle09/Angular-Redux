@@ -26,8 +26,8 @@ export function rootReducer(state: IAppState, action): IAppState {
       });
     case ADD_TODO:
       let newTodo = {
-        id: Math.random() * 100,
-        title: action.title,
+        id: action.todos.id,
+        title: action.todos.title,
         isCompleted: false
       };
       return tassign(state, {

@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { FETCH_CATS } from "./actions";
+import {ADD_TODO, FETCH_CATS, REMOVE_TODO} from './actions';
 import { NgRedux } from "@angular-redux/store";
 import { IAppState } from "./store";
 
@@ -22,20 +22,20 @@ export class CatsService {
       },
       err => {
         // display error if something goes wrong
-        this.ngRedux.dispatch({ type: "FETCH_CATS_ERROR" });
+        // this.ngRedux.dispatch({ type: "FETCH_CATS_ERROR" });
       }
     );
   }
 
   sendCat(item) {
     this.http.post(this.url + "/api/cats", item).subscribe(resp => {
-      console.log(resp);
+      this.ngRedux.dispatch({type: ADD_TODO, todos: resp})
     });
   }
 
   deleteCat(id) {
     this.http.delete(this.url + "/remove_cat/" + id).subscribe(resp => {
-      console.log(resp);
+      this.ngRedux.dispatch({ type: REMOVE_TODO, id });
     });
   }
 }

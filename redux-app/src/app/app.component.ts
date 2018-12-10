@@ -28,6 +28,7 @@ export class AppComponent implements OnInit {
     //   let store = ngRedux.getState();
     //   this.counter = store.counter;
     // });
+
   }
 
   addTodo(input) {
@@ -35,12 +36,10 @@ export class AppComponent implements OnInit {
     let newTodo = {
       title: input.value
     };
-    this.ngRedux.dispatch({ type: ADD_TODO, title: input.value });
     this.catService.sendCat(newTodo);
     input.value = "";
   }
   removeTodo(id) {
-    this.ngRedux.dispatch({ type: REMOVE_TODO, id });
     this.catService.deleteCat(id);
   }
 
