@@ -1,14 +1,41 @@
-import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { FETCH_CATS } from "./actions";
+import { NgRedux } from "@angular-redux/store";
+import { IAppState } from "./store";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class CatsService {
+  private readonly url = "http://localhost:8000";
+  constructor(private http: HttpClient, private ngRedux: NgRedux<IAppState>) {}
 
-  constructor(private http: HttpClient) { }
+  loadCats() {
+    // This action is for handling request from server
+    // in store we can set isFetching: true and show loading icon
+    // this.ngRedux.dispatch({type: 'FETCH_CATS_REQUEST'});
 
-  getAllCats() {
-    return this.http.get('http://localhost:8000/api/cats');
+    this.http.get(this.url + "/api/cats").subscribe(
+      res => {
+        this.ngRedux.dispatch({ type: FETCH_CATS, cats: res });
+      },
+      err => {
+        // display error if something goes wrong
+        this.ngRedux.dispatch({ type: "FETCH_CATS_ERROR" });
+      }
+    );
+  }
+
+  sendCat(item) {
+    this.http.post(this.url + "/api/cats", item).subscribe(resp => {
+      console.log(resp);
+    });
+  }
+
+  deleteCat(id) {
+    this.http.delete(this.url + "/remove_cat/" + id).subscribe(resp => {
+      console.log(resp);
+    });
   }
 }

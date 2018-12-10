@@ -3,7 +3,7 @@
     <h1>
       Todo List
     </h1>
-    <input type="text" #title>
+    <input (keyup.enter)="addTodo(title)" type="text" #title>
     <button (click)="addTodo(title)">Add</button>
     
     <ul>

@@ -1,10 +1,11 @@
-import { tassign } from "tassign";
+import {tassign} from 'tassign';
 import {
   ADD_TODO,
   DELETE_ALL_TODOS,
   REMOVE_TODO,
-  UPDATE_TODO
-} from "./actions";
+  UPDATE_TODO,
+  FETCH_CATS
+} from './actions';
 
 export interface IAppState {
   todos: any[];
@@ -18,6 +19,11 @@ export const INITIAL_STATE: IAppState = {
 
 export function rootReducer(state: IAppState, action): IAppState {
   switch (action.type) {
+    case FETCH_CATS:
+      return tassign(state, {
+        todos: action.cats,
+        lastUpdate: new Date()
+      });
     case ADD_TODO:
       let newTodo = {
         id: Math.random() * 100,
@@ -35,7 +41,7 @@ export function rootReducer(state: IAppState, action): IAppState {
       return tassign(state, {
         todos: [
           ...state.todos.slice(0, index),
-          tassign(item, { isCompleted: !item.isCompleted }),
+          tassign(item, {isCompleted: !item.isCompleted}),
           ...state.todos.slice(index + 1)
         ],
         lastUpdate: new Date()

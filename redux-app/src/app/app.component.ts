@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { CatsService } from "./cats.service";
 import { NgRedux, select } from "@angular-redux/store";
 import { IAppState } from "./store";
-import {ADD_TODO, REMOVE_TODO, UPDATE_TODO} from "./actions";
+import { ADD_TODO, FETCH_CATS, REMOVE_TODO, UPDATE_TODO } from "./actions";
 
 @Component({
   selector: "app-root",
@@ -21,9 +21,8 @@ export class AppComponent implements OnInit {
     private catService: CatsService,
     private ngRedux: NgRedux<IAppState>
   ) {
-    catService.getAllCats().subscribe(res => {
-      this.cats = res;
-    });
+    this.catService.loadCats();
+    // Select operator subscribe and unsubscribe
     // Without select operator
     // ngRedux.subscribe(() => {
     //   let store = ngRedux.getState();
@@ -33,15 +32,20 @@ export class AppComponent implements OnInit {
 
   addTodo(input) {
     if (!input.value) return;
+    let newTodo = {
+      title: input.value
+    };
     this.ngRedux.dispatch({ type: ADD_TODO, title: input.value });
+    this.catService.sendCat(newTodo);
     input.value = "";
   }
   removeTodo(id) {
     this.ngRedux.dispatch({ type: REMOVE_TODO, id });
+    this.catService.deleteCat(id);
   }
 
   updateTodo(id) {
-    this.ngRedux.dispatch({type: UPDATE_TODO, id})
+    this.ngRedux.dispatch({ type: UPDATE_TODO, id });
   }
 
   ngOnInit(): void {}
