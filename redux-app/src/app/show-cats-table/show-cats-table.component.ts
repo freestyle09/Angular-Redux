@@ -10,6 +10,7 @@ export class ShowCatsTableComponent implements OnInit {
   @select("todos")
   cats;
   email: string;
+  text: string = 'Moj kotecek jest bardzo niedobry';
 
   constructor() {}
 
