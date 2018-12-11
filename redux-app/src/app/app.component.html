@@ -3,7 +3,10 @@
     <h1>
       Todo List
     </h1>
-    <input (keyup.enter)="addTodo(title)" type="text" #title>
+    <label>
+      Podaj imię kotka:
+      <input (keyup.enter)="addTodo(title)" type="text" #title>
+    </label>
     <button (click)="addTodo(title)">Add</button>
     
     <ul>

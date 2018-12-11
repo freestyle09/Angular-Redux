@@ -28,7 +28,6 @@ export class AppComponent implements OnInit {
     //   let store = ngRedux.getState();
     //   this.counter = store.counter;
     // });
-
   }
 
   addTodo(input) {

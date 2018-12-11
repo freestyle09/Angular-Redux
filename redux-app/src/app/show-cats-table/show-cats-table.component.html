@@ -1,5 +1,10 @@
 <div>
-  <p *ngFor="let cat of cats | async">
+  <p [class.completed]="cat.isCompleted" *ngFor="let cat of cats | async">
     {{cat.title}}
   </p>
+  <label>
+    Podaj swoje imię:
+    <input [(ngModel)]="email" (keyup.enter)="onKeyUp()" type="text">
+  </label>
+
 </div>
